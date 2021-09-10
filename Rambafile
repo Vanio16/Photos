@@ -1,5 +1,5 @@
 ### Headers settings
-company: none
+company: BitCom
 
 ### Xcode project settings
 project_name: Photos
@@ -15,14 +15,6 @@ project_file_path: Classes/
 # The xcodeproj group path to new modules
 project_group_path: Classes/
 
-### Dependencies settings section
-
-cartfile_path: Cartfile
-
 ### Templates
-catalogs:
-- 'https://github.com/rosberry/rosberry-generamba-templates'
 templates:
-# - {name: rsb_swift_service}
-
-
+- {name: mvp_module}
