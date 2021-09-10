@@ -2,13 +2,13 @@
 //  Copyright © 2021 BitCom. All rights reserved.
 //
 
-protocol MainModuleInput: class {
+protocol MainModuleInput: AnyObject {
 
     var state: MainState { get }
     func update(force: Bool, animated: Bool)
 }
 
-protocol MainModuleOutput: class {
+protocol MainModuleOutput: AnyObject {
 
     func mainModuleClosed(_ moduleInput: MainModuleInput)
 }

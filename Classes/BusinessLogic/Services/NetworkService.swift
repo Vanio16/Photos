@@ -1,6 +1,6 @@
 //
 //  NetworkService.swift
-//  Translator
+//  Photos
 //
 //  Created by Ivan Zakharov on 3/9/21.
 //

@@ -26,7 +26,7 @@ final class MainPresenter {
 // MARK: - MainViewOutput
 
 extension MainPresenter: MainViewOutput {
-    
+
     func viewDidLoad() {
         networkService.getPhotos { [weak self] result in
             switch result {
@@ -39,7 +39,7 @@ extension MainPresenter: MainViewOutput {
         }
         update(force: true, animated: false)
     }
-    
+
 }
 
 // MARK: - MainModuleInput

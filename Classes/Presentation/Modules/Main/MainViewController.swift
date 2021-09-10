@@ -5,11 +5,11 @@
 import UIKit
 import CollectionViewTools
 
-protocol MainViewInput: class {
+protocol MainViewInput: AnyObject {
     func update(with viewModel: MainViewModel, force: Bool, animated: Bool)
 }
 
-protocol MainViewOutput: class {
+protocol MainViewOutput: AnyObject {
     func viewDidLoad()
 }
 

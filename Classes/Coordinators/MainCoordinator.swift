@@ -22,7 +22,7 @@ final class MainCoordinator: MainModuleOutput {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
-    
+
     func mainModuleClosed(_ moduleInput: MainModuleInput) {
     }
 }
