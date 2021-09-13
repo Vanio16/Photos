@@ -21,17 +21,34 @@ final class MainPresenter {
         self.dependencies = dependencies
         self.listItemsFactory = listItemsFactory
     }
+    
+    
 }
 
 // MARK: - MainViewOutput
 
 extension MainPresenter: MainViewOutput {
+    func didScrollToPageEnd() {
+        state.page += 1
+        networkService.getPhotos(page: state.page) { [weak self] result in
+            switch result {
+            case .success(let responce):
+                self?.state.photos += responce
+                self?.update(animated: true)
+            case .failure(_):
+                break
+            }
+        }
+        update(force: true, animated: false)
+    }
+    
 
     func viewDidLoad() {
-        networkService.getPhotos { [weak self] result in
+        networkService.getPhotos(page: state.page) { [weak self] result in
             switch result {
             case .success(let responce):
                 self?.state.photos = responce
+                self?.state.isActivityIndicatorHidden = true
                 self?.update(animated: true)
             case .failure(_):
                 break
