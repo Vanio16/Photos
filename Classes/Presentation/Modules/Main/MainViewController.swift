@@ -37,7 +37,7 @@ final class MainViewController: UIViewController {
         view.isPrefetchingEnabled = false
         return view
     }()
-    
+
     private let activityIndicator: UIActivityIndicatorView = {
        let indicator = UIActivityIndicatorView()
         indicator.startAnimating()
@@ -88,7 +88,7 @@ extension MainViewController: MainViewInput, ViewUpdate {
         func updateViewModel<Value: Equatable>(_ keyPath: KeyPath<MainViewModel, Value>, configurationBlock: (Value) -> Void) {
             update(new: viewModel, old: oldViewModel, keyPath: keyPath, force: force, configurationBlock: configurationBlock)
         }
-        
+
         updateViewModel(\.isActivityIndicatorHidden) { isHidden in
             isHidden ? activityIndicator.stopAnimating() : activityIndicator.startAnimating()
         }

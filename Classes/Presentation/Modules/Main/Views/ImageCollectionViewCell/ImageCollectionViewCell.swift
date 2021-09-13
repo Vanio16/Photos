@@ -19,9 +19,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
         label.font = UIFont(name: "Lato-Regular", size: 17)
         return label
     }()
-    
+
     private let gradientView = UIView()
-    
+
     private let gradientLayer: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
         let colorTop =  UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 0.0).cgColor
@@ -40,9 +40,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         backgroundColor = .clear
         gradientView.layer.addSublayer(gradientLayer)
-        
+
         add(view, image, gradientView, authorNameLabel)
-        
+
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

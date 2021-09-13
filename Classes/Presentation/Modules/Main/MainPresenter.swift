@@ -21,8 +21,7 @@ final class MainPresenter {
         self.dependencies = dependencies
         self.listItemsFactory = listItemsFactory
     }
-    
-    
+
 }
 
 // MARK: - MainViewOutput
@@ -41,7 +40,6 @@ extension MainPresenter: MainViewOutput {
         }
         update(force: true, animated: false)
     }
-    
 
     func viewDidLoad() {
         networkService.getPhotos(page: state.page) { [weak self] result in
