@@ -8,7 +8,6 @@ final class MainListItemsFactory {
 
     weak var viewController: MainViewController?
     weak var output: MainViewOutput?
-//    var cellItems: [CollectionViewDiffCellItem] = []
 
     func makeSectionItems(state: MainState) -> [GeneralCollectionViewDiffSectionItem] {
         var cellItems: [CollectionViewDiffCellItem] = []

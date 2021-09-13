@@ -13,6 +13,7 @@ protocol MainViewInput: AnyObject {
 protocol MainViewOutput: AnyObject {
     func viewDidLoad()
     func didScrollToPageEnd()
+    func retryButtonTriggered()
 }
 
 final class MainViewController: UIViewController {
@@ -39,11 +40,47 @@ final class MainViewController: UIViewController {
     }()
 
     private let activityIndicator: UIActivityIndicatorView = {
-       let indicator = UIActivityIndicatorView()
+        let indicator = UIActivityIndicatorView()
         indicator.startAnimating()
         indicator.hidesWhenStopped = true
         indicator.style = .large
         return indicator
+    }()
+
+    let networkErrorView: UIView = {
+        let view = UIView()
+        view.isHidden = true
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 15
+        return view
+    }()
+
+    private let retryButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Retry", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Lato-Bold", size: 24)
+        button.addTarget(self, action: #selector(retryButtonPressed), for: .touchUpInside)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10
+        return button
+    }()
+
+    private let errorMessageHeader: UILabel = {
+        let label = UILabel()
+        label.text = "Woah!"
+        label.font = UIFont(name: "Lato-Bold", size: 26)
+        return label
+    }()
+
+    private let errorMessage: UILabel = {
+        let label = UILabel()
+        label.text = "Something went wrong. We're already working on that"
+        label.font = UIFont(name: "Lato-Regular", size: 18)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+
     }()
 
     // MARK: - Lifecycle
@@ -60,7 +97,9 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.add(collectionView, activityIndicator)
+        networkErrorView.add(errorMessageHeader, errorMessage, retryButton)
+        view.add(collectionView, activityIndicator, networkErrorView)
+
         output.viewDidLoad()
     }
 
@@ -71,9 +110,38 @@ final class MainViewController: UIViewController {
         collectionView.frame = view.bounds
         collectionView.contentInset = view.safeAreaInsets
         collectionView.scrollIndicatorInsets = collectionView.contentInset
+
         activityIndicator.configureFrame { maker in
             maker.center()
         }
+
+        networkErrorView.configureFrame { maker in
+            let height = view.frame.width - 100
+            maker.center()
+                .left(inset: 50)
+                .right(inset: 50)
+                .height(height - 50)
+        }
+        errorMessageHeader.configureFrame { maker in
+            maker.centerX()
+                .top(inset: 20)
+                .sizeToFit()
+        }
+        errorMessage.configureFrame { maker in
+            maker.left(inset: 30)
+                .right(inset: 30)
+                .centerX()
+                .top(to: errorMessageHeader.nui_bottom, inset: 20)
+                .heightToFit()
+        }
+        retryButton.configureFrame { maker in
+            maker.top(to: errorMessage.nui_bottom, inset: 30)
+                .centerX()
+                .size(width: 180, height: 50)
+        }
+    }
+    @objc private func retryButtonPressed() {
+        output.retryButtonTriggered()
     }
 }
 
@@ -93,6 +161,10 @@ extension MainViewController: MainViewInput, ViewUpdate {
             isHidden ? activityIndicator.stopAnimating() : activityIndicator.startAnimating()
         }
 
+        updateViewModel(\.isNetworkErrorViewHidden) { isHidden in
+            networkErrorView.isHidden = isHidden
+        }
+
         collectionViewManager.update(with: viewModel.listSectionItems, animated: animated)
     }
 }
@@ -101,7 +173,7 @@ extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffsetY = scrollView.contentOffset.y
         if contentOffsetY >= (scrollView.contentSize.height - scrollView.bounds.height - 19) {
-                output.didScrollToPageEnd()
+            output.didScrollToPageEnd()
+        }
     }
-}
 }

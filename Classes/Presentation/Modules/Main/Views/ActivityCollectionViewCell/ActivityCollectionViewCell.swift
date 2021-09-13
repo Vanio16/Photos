@@ -11,7 +11,7 @@ class ActivityCollectionViewCell: UICollectionViewCell {
     }
 
     private let activityIndicator: UIActivityIndicatorView = {
-       let indicator = UIActivityIndicatorView()
+        let indicator = UIActivityIndicatorView()
         indicator.startAnimating()
         indicator.style = .medium
         return indicator

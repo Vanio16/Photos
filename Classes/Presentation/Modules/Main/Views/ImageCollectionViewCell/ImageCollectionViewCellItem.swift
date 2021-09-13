@@ -33,9 +33,9 @@ final class ImageCollectionViewCellItem: CollectionViewDiffCellItem {
             return
         }
         cell.authorNameLabel.text = authorName
-        cell.view.backgroundColor = viewColor
+        cell.backgroundColorView.backgroundColor = viewColor
         let url = URL(string: imageURL)
-        cell.image.kf.setImage(with: url)
+        cell.imageView.kf.setImage(with: url)
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
     }

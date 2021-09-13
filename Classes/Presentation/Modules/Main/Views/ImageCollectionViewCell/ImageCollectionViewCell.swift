@@ -29,19 +29,19 @@ class ImageCollectionViewCell: UICollectionViewCell {
         gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-       return gradientLayer
+        return gradientLayer
     }()
 
-    private(set) lazy var view = UIView()
+    private(set) lazy var backgroundColorView = UIView()
 
-    private(set) lazy var image = UIImageView()
+    private(set) lazy var imageView = UIImageView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
         gradientView.layer.addSublayer(gradientLayer)
 
-        add(view, image, gradientView, authorNameLabel)
+        add(backgroundColorView, imageView, gradientView, authorNameLabel)
 
     }
     required init?(coder: NSCoder) {
@@ -55,14 +55,14 @@ class ImageCollectionViewCell: UICollectionViewCell {
                 .heightToFit()
         }
 
-        view.configureFrame { maker in
+        backgroundColorView.configureFrame { maker in
             maker.top()
                 .bottom()
                 .right()
                 .left()
         }
 
-        image.configureFrame { maker in
+        imageView.configureFrame { maker in
             maker.top()
                 .bottom()
                 .left()

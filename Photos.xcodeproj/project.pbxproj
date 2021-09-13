@@ -25,6 +25,9 @@
 		97138A5726EA3373009BEDAF /* Framezilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97138A5626EA3373009BEDAF /* Framezilla.framework */; };
 		97138A5B26EA3C65009BEDAF /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97138A5A26EA3C65009BEDAF /* UIColor+HexString.swift */; };
 		97138A5D26EA4445009BEDAF /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97138A5C26EA4445009BEDAF /* Kingfisher.framework */; };
+		97319A7D26EF38AB00497052 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979114EE26EB6B8700FCCFD5 /* Lato-Regular.ttf */; };
+		97319A7E26EF38AB00497052 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979114ED26EB6B7900FCCFD5 /* Lato-Light.ttf */; };
+		97319A7F26EF38AB00497052 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979114EC26EB6B6E00FCCFD5 /* Lato-Bold.ttf */; };
 		979114F426EB6CE400FCCFD5 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979114F326EB6CE400FCCFD5 /* UIFont+App.swift */; };
 		979114F626EB6D1E00FCCFD5 /* Textstyle+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979114F526EB6D1E00FCCFD5 /* Textstyle+App.swift */; };
 		979114F926EB7B1A00FCCFD5 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979114F826EB7B1A00FCCFD5 /* ActivityCollectionViewCell.swift */; };
@@ -353,6 +356,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97319A7D26EF38AB00497052 /* Lato-Regular.ttf in Resources */,
+				97319A7E26EF38AB00497052 /* Lato-Light.ttf in Resources */,
+				97319A7F26EF38AB00497052 /* Lato-Bold.ttf in Resources */,
 				060F08731E4D6C9200D9166F /* LaunchScreen.storyboard in Resources */,
 				066238161F879B4D00AA6B14 /* Localizable.strings in Resources */,
 				060F08711E4D6C9200D9166F /* Assets.xcassets in Resources */,

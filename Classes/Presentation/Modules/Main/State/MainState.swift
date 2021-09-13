@@ -5,5 +5,6 @@
 final class MainState {
     var photos: [PhotosModel] = []
     var isActivityIndicatorHidden = false
-    var page: Int = 1
+    var pageIndex: Int = 1
+    var isNetworkErrorViewHidden = true
 }
