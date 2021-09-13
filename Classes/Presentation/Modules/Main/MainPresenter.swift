@@ -22,13 +22,13 @@ final class MainPresenter {
         self.listItemsFactory = listItemsFactory
     }
 
-    private func networkServiceGetPhotos() {
+    private func fetchPhotos() {
         state.isNetworkErrorViewHidden = true
         state.isActivityIndicatorHidden = false
         networkService.getPhotos(pageIndex: state.pageIndex) { [weak self] result in
             switch result {
-            case .success(let responce):
-                self?.state.photos = responce
+            case .success(let response):
+                self?.state.photos = response
                 self?.state.isActivityIndicatorHidden = true
                 self?.update(animated: true)
             case .failure(_):
@@ -45,15 +45,15 @@ final class MainPresenter {
 
 extension MainPresenter: MainViewOutput {
     func retryButtonTriggered() {
-        networkServiceGetPhotos()
+        fetchPhotos()
     }
 
     func didScrollToPageEnd() {
         state.pageIndex += 1
         networkService.getPhotos(pageIndex: state.pageIndex) { [weak self] result in
             switch result {
-            case .success(let responce):
-                self?.state.photos += responce
+            case .success(let response):
+                self?.state.photos += response
                 self?.update(animated: true)
             case .failure(_):
                 break
@@ -63,7 +63,7 @@ extension MainPresenter: MainViewOutput {
     }
 
     func viewDidLoad() {
-        networkServiceGetPhotos()
+        fetchPhotos()
     }
 }
 

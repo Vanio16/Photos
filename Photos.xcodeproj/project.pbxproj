@@ -28,6 +28,7 @@
 		97319A7D26EF38AB00497052 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979114EE26EB6B8700FCCFD5 /* Lato-Regular.ttf */; };
 		97319A7E26EF38AB00497052 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979114ED26EB6B7900FCCFD5 /* Lato-Light.ttf */; };
 		97319A7F26EF38AB00497052 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979114EC26EB6B6E00FCCFD5 /* Lato-Bold.ttf */; };
+		97319A8226EF513800497052 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97319A8126EF513800497052 /* NetworkErrorView.swift */; };
 		979114F426EB6CE400FCCFD5 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979114F326EB6CE400FCCFD5 /* UIFont+App.swift */; };
 		979114F626EB6D1E00FCCFD5 /* Textstyle+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979114F526EB6D1E00FCCFD5 /* Textstyle+App.swift */; };
 		979114F926EB7B1A00FCCFD5 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979114F826EB7B1A00FCCFD5 /* ActivityCollectionViewCell.swift */; };
@@ -68,6 +69,7 @@
 		97138A5626EA3373009BEDAF /* Framezilla.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Framezilla.framework; path = Carthage/Build/iOS/Framezilla.framework; sourceTree = "<group>"; };
 		97138A5A26EA3C65009BEDAF /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
 		97138A5C26EA4445009BEDAF /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		97319A8126EF513800497052 /* NetworkErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
 		979114EC26EB6B6E00FCCFD5 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		979114ED26EB6B7900FCCFD5 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		979114EE26EB6B8700FCCFD5 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		325FFF384068F66F177B8616 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				97319A8026EF50FF00497052 /* NetworkErrorView */,
 				979114F726EB7AE100FCCFD5 /* ActivityCollectionViewCell */,
 				97138A5526EA31E0009BEDAF /* ImageCollectionViewCell */,
 				C7CC9F5ABACA636F72B40703 /* MainListItemsFactory.swift */,
@@ -252,6 +255,14 @@
 				97138A5326EA31D8009BEDAF /* ImageCollectionViewCellItem.swift */,
 			);
 			path = ImageCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		97319A8026EF50FF00497052 /* NetworkErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				97319A8126EF513800497052 /* NetworkErrorView.swift */,
+			);
+			path = NetworkErrorView;
 			sourceTree = "<group>";
 		};
 		979114F726EB7AE100FCCFD5 /* ActivityCollectionViewCell */ = {
@@ -435,6 +446,7 @@
 				979114F426EB6CE400FCCFD5 /* UIFont+App.swift in Sources */,
 				979114FB26EB7B3300FCCFD5 /* ActivityCollectionViewCellItem.swift in Sources */,
 				06E0EBD11FAC0BB4002715AE /* AppConfigurator.swift in Sources */,
+				97319A8226EF513800497052 /* NetworkErrorView.swift in Sources */,
 				97138A5226EA3179009BEDAF /* ImageCollectionViewCell.swift in Sources */,
 				979114F626EB6D1E00FCCFD5 /* Textstyle+App.swift in Sources */,
 				97BEE17D26EB33C3000BE5F8 /* MainCoordinator.swift in Sources */,
