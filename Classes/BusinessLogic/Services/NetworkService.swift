@@ -9,8 +9,8 @@ import Foundation
 
 class NetworkService {
 private let token = "yTsBvTOVn8J6qUgrOtA3qmAQjureSk5r6NvtofZ8mtI"
-    func getPhotos(completion: @escaping (Result<[PhotosModel], Error>) -> Void) {
-        let urlString = "https://api.unsplash.com/photos?page=1&client_id=\(token)"
+    func getPhotos(pageIndex: Int, completion: @escaping (Result<[PhotosModel], Error>) -> Void) {
+        let urlString = "https://api.unsplash.com/photos?page=\(pageIndex)&client_id=\(token)"
         guard let url = URL(string: urlString) else {
             return
         }

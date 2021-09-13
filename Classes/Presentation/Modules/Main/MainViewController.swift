@@ -4,6 +4,7 @@
 
 import UIKit
 import CollectionViewTools
+import Framezilla
 
 protocol MainViewInput: AnyObject {
     func update(with viewModel: MainViewModel, force: Bool, animated: Bool)
@@ -11,6 +12,8 @@ protocol MainViewInput: AnyObject {
 
 protocol MainViewOutput: AnyObject {
     func viewDidLoad()
+    func didScrollToPageEnd()
+    func retryButtonTriggered()
 }
 
 final class MainViewController: UIViewController {
@@ -18,8 +21,11 @@ final class MainViewController: UIViewController {
     private var viewModel: MainViewModel
     private let output: MainViewOutput
 
-    private lazy var collectionViewManager: CollectionViewManager = .init(collectionView: collectionView)
-
+    private lazy var collectionViewManager: CollectionViewManager = {
+        let manager = CollectionViewManager(collectionView: collectionView)
+        manager.scrollDelegate = self
+        return manager
+    }()
     // MARK: - Subviews
 
     private lazy var collectionView: UICollectionView = {
@@ -30,6 +36,22 @@ final class MainViewController: UIViewController {
         view.alwaysBounceVertical = true
         view.contentInsetAdjustmentBehavior = .never
         view.isPrefetchingEnabled = false
+        return view
+    }()
+
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.startAnimating()
+        indicator.hidesWhenStopped = true
+        indicator.style = .large
+        return indicator
+    }()
+
+    private lazy var networkErrorView: NetworkErrorView = {
+        let view = NetworkErrorView()
+        view.retryButtonHandler = { [weak output] in
+            output?.retryButtonTriggered()
+        }
         return view
     }()
 
@@ -47,7 +69,7 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.add(collectionView)
+        view.add(collectionView, activityIndicator, networkErrorView)
         output.viewDidLoad()
     }
 
@@ -58,6 +80,15 @@ final class MainViewController: UIViewController {
         collectionView.frame = view.bounds
         collectionView.contentInset = view.safeAreaInsets
         collectionView.scrollIndicatorInsets = collectionView.contentInset
+
+        activityIndicator.configureFrame { maker in
+            maker.center()
+        }
+
+        networkErrorView.configureFrame { maker in
+            maker.center()
+                .size(width: view.frame.width, height: view.frame.width)
+        }
     }
 }
 
@@ -73,6 +104,23 @@ extension MainViewController: MainViewInput, ViewUpdate {
             update(new: viewModel, old: oldViewModel, keyPath: keyPath, force: force, configurationBlock: configurationBlock)
         }
 
+        updateViewModel(\.isActivityIndicatorHidden) { isHidden in
+            isHidden ? activityIndicator.stopAnimating() : activityIndicator.startAnimating()
+        }
+
+        updateViewModel(\.isNetworkErrorViewHidden) { isHidden in
+            networkErrorView.isHidden = isHidden
+        }
+
         collectionViewManager.update(with: viewModel.listSectionItems, animated: animated)
+    }
+}
+
+extension MainViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        if contentOffsetY >= (scrollView.contentSize.height - scrollView.bounds.height - 19) {
+            output.didScrollToPageEnd()
+        }
     }
 }

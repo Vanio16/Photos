@@ -21,17 +21,39 @@ final class MainPresenter {
         self.dependencies = dependencies
         self.listItemsFactory = listItemsFactory
     }
+
+    private func fetchPhotos() {
+        state.isNetworkErrorViewHidden = true
+        state.isActivityIndicatorHidden = false
+        networkService.getPhotos(pageIndex: state.pageIndex) { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.state.photos = response
+                self?.state.isActivityIndicatorHidden = true
+                self?.update(animated: true)
+            case .failure(_):
+                self?.state.isNetworkErrorViewHidden = false
+                self?.state.isActivityIndicatorHidden = true
+                self?.update(animated: true)
+            }
+        }
+        update(force: true, animated: false)
+    }
 }
 
 // MARK: - MainViewOutput
 
 extension MainPresenter: MainViewOutput {
+    func retryButtonTriggered() {
+        fetchPhotos()
+    }
 
-    func viewDidLoad() {
-        networkService.getPhotos { [weak self] result in
+    func didScrollToPageEnd() {
+        state.pageIndex += 1
+        networkService.getPhotos(pageIndex: state.pageIndex) { [weak self] result in
             switch result {
-            case .success(let responce):
-                self?.state.photos = responce
+            case .success(let response):
+                self?.state.photos += response
                 self?.update(animated: true)
             case .failure(_):
                 break
@@ -40,6 +62,9 @@ extension MainPresenter: MainViewOutput {
         update(force: true, animated: false)
     }
 
+    func viewDidLoad() {
+        fetchPhotos()
+    }
 }
 
 // MARK: - MainModuleInput

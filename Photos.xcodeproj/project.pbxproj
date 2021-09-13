@@ -25,6 +25,14 @@
 		97138A5726EA3373009BEDAF /* Framezilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97138A5626EA3373009BEDAF /* Framezilla.framework */; };
 		97138A5B26EA3C65009BEDAF /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97138A5A26EA3C65009BEDAF /* UIColor+HexString.swift */; };
 		97138A5D26EA4445009BEDAF /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97138A5C26EA4445009BEDAF /* Kingfisher.framework */; };
+		97319A7D26EF38AB00497052 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979114EE26EB6B8700FCCFD5 /* Lato-Regular.ttf */; };
+		97319A7E26EF38AB00497052 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979114ED26EB6B7900FCCFD5 /* Lato-Light.ttf */; };
+		97319A7F26EF38AB00497052 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979114EC26EB6B6E00FCCFD5 /* Lato-Bold.ttf */; };
+		97319A8226EF513800497052 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97319A8126EF513800497052 /* NetworkErrorView.swift */; };
+		979114F426EB6CE400FCCFD5 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979114F326EB6CE400FCCFD5 /* UIFont+App.swift */; };
+		979114F626EB6D1E00FCCFD5 /* Textstyle+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979114F526EB6D1E00FCCFD5 /* Textstyle+App.swift */; };
+		979114F926EB7B1A00FCCFD5 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979114F826EB7B1A00FCCFD5 /* ActivityCollectionViewCell.swift */; };
+		979114FB26EB7B3300FCCFD5 /* ActivityCollectionViewCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979114FA26EB7B3300FCCFD5 /* ActivityCollectionViewCellItem.swift */; };
 		97A7D54626E9EEDD000C7FF4 /* ViewUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A7D54526E9EEDD000C7FF4 /* ViewUpdatable.swift */; };
 		97BEE17D26EB33C3000BE5F8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BEE17C26EB33C3000BE5F8 /* MainCoordinator.swift */; };
 		A744BF3FDB07AF10BE8CD46B /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AC6AE0FB6DF8A8BB2946 /* MainModule.swift */; };
@@ -61,6 +69,15 @@
 		97138A5626EA3373009BEDAF /* Framezilla.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Framezilla.framework; path = Carthage/Build/iOS/Framezilla.framework; sourceTree = "<group>"; };
 		97138A5A26EA3C65009BEDAF /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
 		97138A5C26EA4445009BEDAF /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		97319A8126EF513800497052 /* NetworkErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
+		979114EC26EB6B6E00FCCFD5 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		979114ED26EB6B7900FCCFD5 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		979114EE26EB6B8700FCCFD5 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		979114EF26EB6BEF00FCCFD5 /* Texstyle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Texstyle.framework; path = Carthage/Build/iOS/Texstyle.framework; sourceTree = "<group>"; };
+		979114F326EB6CE400FCCFD5 /* UIFont+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
+		979114F526EB6D1E00FCCFD5 /* Textstyle+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Textstyle+App.swift"; sourceTree = "<group>"; };
+		979114F826EB7B1A00FCCFD5 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
+		979114FA26EB7B3300FCCFD5 /* ActivityCollectionViewCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCellItem.swift; sourceTree = "<group>"; };
 		97A7D54526E9EEDD000C7FF4 /* ViewUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUpdatable.swift; sourceTree = "<group>"; };
 		97BEE17C26EB33C3000BE5F8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		C3D08F4D2101B9B500FDC15E /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -149,6 +166,9 @@
 		060F08641E4D6C9200D9166F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				979114EE26EB6B8700FCCFD5 /* Lato-Regular.ttf */,
+				979114ED26EB6B7900FCCFD5 /* Lato-Light.ttf */,
+				979114EC26EB6B6E00FCCFD5 /* Lato-Bold.ttf */,
 				060F08691E4D6C9200D9166F /* LaunchScreen.storyboard */,
 				060F08651E4D6C9200D9166F /* Assets.xcassets */,
 				066238181F879B4D00AA6B14 /* Localizable.strings */,
@@ -198,6 +218,8 @@
 		325FFF384068F66F177B8616 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				97319A8026EF50FF00497052 /* NetworkErrorView */,
+				979114F726EB7AE100FCCFD5 /* ActivityCollectionViewCell */,
 				97138A5526EA31E0009BEDAF /* ImageCollectionViewCell */,
 				C7CC9F5ABACA636F72B40703 /* MainListItemsFactory.swift */,
 			);
@@ -207,6 +229,7 @@
 		97138A4526EA2193009BEDAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				979114EF26EB6BEF00FCCFD5 /* Texstyle.framework */,
 				97138A5C26EA4445009BEDAF /* Kingfisher.framework */,
 				97138A5626EA3373009BEDAF /* Framezilla.framework */,
 				97138A4626EA2194009BEDAF /* CollectionViewTools.framework */,
@@ -219,6 +242,8 @@
 			children = (
 				97138A4B26EA22F6009BEDAF /* UIView+Sugar.swift */,
 				97138A5A26EA3C65009BEDAF /* UIColor+HexString.swift */,
+				979114F326EB6CE400FCCFD5 /* UIFont+App.swift */,
+				979114F526EB6D1E00FCCFD5 /* Textstyle+App.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +255,23 @@
 				97138A5326EA31D8009BEDAF /* ImageCollectionViewCellItem.swift */,
 			);
 			path = ImageCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		97319A8026EF50FF00497052 /* NetworkErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				97319A8126EF513800497052 /* NetworkErrorView.swift */,
+			);
+			path = NetworkErrorView;
+			sourceTree = "<group>";
+		};
+		979114F726EB7AE100FCCFD5 /* ActivityCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				979114F826EB7B1A00FCCFD5 /* ActivityCollectionViewCell.swift */,
+				979114FA26EB7B3300FCCFD5 /* ActivityCollectionViewCellItem.swift */,
+			);
+			path = ActivityCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		97A7D54426E9EECA000C7FF4 /* ViewUpdatable */ = {
@@ -296,8 +338,9 @@
 				TargetAttributes = {
 					060F08431E4D6B3900D9166F = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5833UA6FFA;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -324,6 +367,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97319A7D26EF38AB00497052 /* Lato-Regular.ttf in Resources */,
+				97319A7E26EF38AB00497052 /* Lato-Light.ttf in Resources */,
+				97319A7F26EF38AB00497052 /* Lato-Bold.ttf in Resources */,
 				060F08731E4D6C9200D9166F /* LaunchScreen.storyboard in Resources */,
 				066238161F879B4D00AA6B14 /* Localizable.strings in Resources */,
 				060F08711E4D6C9200D9166F /* Assets.xcassets in Resources */,
@@ -397,13 +443,18 @@
 				97138A4C26EA22F6009BEDAF /* UIView+Sugar.swift in Sources */,
 				C3D08F4F2101B9B600FDC15E /* Assets.swift in Sources */,
 				060F086D1E4D6C9200D9166F /* AppDelegate.swift in Sources */,
+				979114F426EB6CE400FCCFD5 /* UIFont+App.swift in Sources */,
+				979114FB26EB7B3300FCCFD5 /* ActivityCollectionViewCellItem.swift in Sources */,
 				06E0EBD11FAC0BB4002715AE /* AppConfigurator.swift in Sources */,
+				97319A8226EF513800497052 /* NetworkErrorView.swift in Sources */,
 				97138A5226EA3179009BEDAF /* ImageCollectionViewCell.swift in Sources */,
+				979114F626EB6D1E00FCCFD5 /* Textstyle+App.swift in Sources */,
 				97BEE17D26EB33C3000BE5F8 /* MainCoordinator.swift in Sources */,
 				A744BF3FDB07AF10BE8CD46B /* MainModule.swift in Sources */,
 				5889A631577E255AC24A82ED /* MainViewController.swift in Sources */,
 				97A7D54626E9EEDD000C7FF4 /* ViewUpdatable.swift in Sources */,
 				F6FE5E662D57C3E5A407CF5F /* MainViewModel.swift in Sources */,
+				979114F926EB7B1A00FCCFD5 /* ActivityCollectionViewCell.swift in Sources */,
 				97138A5B26EA3C65009BEDAF /* UIColor+HexString.swift in Sources */,
 				3D143150880A2D5F82B4BEBC /* MainPresenter.swift in Sources */,
 				E62BCFEAF4D8314E053CA168 /* MainState.swift in Sources */,
@@ -546,9 +597,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				"DEBUG_INFORMATION_FORMAT[sdk=iphoneos*]" = "dwarf-with-dsym";
 				"DEBUG_INFORMATION_FORMAT[sdk=iphonesimulator*]" = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5833UA6FFA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -559,6 +612,7 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.photos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEV_SERVER DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -569,7 +623,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5833UA6FFA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -579,6 +635,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.photos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEV_SERVER ADHOC";
 				SWIFT_VERSION = 5.0;
 			};
@@ -647,9 +704,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				"DEBUG_INFORMATION_FORMAT[sdk=iphoneos*]" = "dwarf-with-dsym";
 				"DEBUG_INFORMATION_FORMAT[sdk=iphonesimulator*]" = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5833UA6FFA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -660,6 +719,7 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.photos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "STAGING_SERVER DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -729,9 +789,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				"DEBUG_INFORMATION_FORMAT[sdk=iphoneos*]" = "dwarf-with-dsym";
 				"DEBUG_INFORMATION_FORMAT[sdk=iphonesimulator*]" = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5833UA6FFA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -742,6 +804,7 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.photos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "PRODUCTION_SERVER DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -806,7 +869,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5833UA6FFA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -816,6 +881,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.photos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "STAGING_SERVER ADHOC";
 				SWIFT_VERSION = 5.0;
 			};
@@ -879,7 +945,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5833UA6FFA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -889,6 +957,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.photos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "PRODUCTION_SERVER ADHOC";
 				SWIFT_VERSION = 5.0;
 			};
@@ -952,7 +1021,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5833UA6FFA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -962,6 +1033,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.photos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = AppStore;
@@ -1026,7 +1098,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5833UA6FFA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1037,6 +1111,7 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies -Xfrontend -warn-long-function-bodies=100 -Xfrontend -warn-long-expression-type-checking=100";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.photos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};

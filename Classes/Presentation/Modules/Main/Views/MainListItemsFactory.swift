@@ -8,10 +8,12 @@ final class MainListItemsFactory {
 
     weak var viewController: MainViewController?
     weak var output: MainViewOutput?
-    var cellItems: [ImageCollectionViewCellItem] = []
 
     func makeSectionItems(state: MainState) -> [GeneralCollectionViewDiffSectionItem] {
-
+        var cellItems: [CollectionViewDiffCellItem] = []
+        if state.photos.isEmpty {
+            return []
+        }
         for photo in state.photos {
             let ratio = CGFloat(photo.width) / CGFloat(photo.height)
             let item = ImageCollectionViewCellItem(authorName: photo.user.name,
@@ -23,6 +25,8 @@ final class MainListItemsFactory {
             //            }
             cellItems.append(item)
         }
+        let item = ActivityCollectionViewCellItem()
+        cellItems.append(item)
         let sectionItem = GeneralCollectionViewDiffSectionItem(cellItems: cellItems)
         return [sectionItem]
     }
