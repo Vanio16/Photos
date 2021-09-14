@@ -14,6 +14,7 @@ protocol MainViewOutput: AnyObject {
     func viewDidLoad()
     func didScrollToPageEnd()
     func retryButtonTriggered()
+    func showDetailScreen(photo: PhotosModel, ratio: CGFloat)
 }
 
 final class MainViewController: UIViewController {

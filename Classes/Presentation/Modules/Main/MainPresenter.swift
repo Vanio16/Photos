@@ -1,6 +1,7 @@
 //
 //  Copyright © 2021 BitCom. All rights reserved.
 //
+import UIKit
 
 final class MainPresenter {
 
@@ -46,6 +47,10 @@ final class MainPresenter {
 extension MainPresenter: MainViewOutput {
     func retryButtonTriggered() {
         fetchPhotos()
+    }
+
+    func showDetailScreen(photo: PhotosModel, ratio: CGFloat) {
+        output?.mainModuleDetailModuleShow(self, photo: photo, ratio: ratio)
     }
 
     func didScrollToPageEnd() {
