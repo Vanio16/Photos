@@ -28,7 +28,7 @@ final class ActivityCollectionViewCellItem: CollectionViewDiffCellItem {
     }
 
     func size(in collectionView: UICollectionView, sectionItem: CollectionViewSectionItem) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 80)
+        return CGSize(width: collectionView.frame.width, height: 60)
     }
 
     func isEqual(to item: DiffItem) -> Bool {

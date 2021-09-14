@@ -20,9 +20,9 @@ final class MainListItemsFactory {
                                                    viewColor: photo.uiColor,
                                                    imageURL: photo.urls.regular,
                                                    ratio: CGFloat(ratio))
-            //            item.itemDidSelectHandler = { [weak self] _ in
-            //
-            //            }
+            item.itemDidSelectHandler = { [weak self] _ in
+                self?.output?.showDetailScreen(photo: photo, ratio: ratio)
+                        }
             cellItems.append(item)
         }
         let item = ActivityCollectionViewCellItem()

@@ -1,6 +1,7 @@
 //
 //  Copyright © 2021 BitCom. All rights reserved.
 //
+import UIKit
 
 protocol MainModuleInput: AnyObject {
 
@@ -11,6 +12,7 @@ protocol MainModuleInput: AnyObject {
 protocol MainModuleOutput: AnyObject {
 
     func mainModuleClosed(_ moduleInput: MainModuleInput)
+    func mainModuleDetailModuleShow(_ moduleInput: MainModuleInput, photo: PhotosModel, ratio: CGFloat)
 }
 
 final class MainModule {
