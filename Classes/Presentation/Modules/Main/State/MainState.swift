@@ -7,4 +7,5 @@ final class MainState {
     var isActivityIndicatorHidden = false
     var pageIndex: Int = 1
     var isNetworkErrorViewHidden = true
+    var isTextFieldFocused = false
 }

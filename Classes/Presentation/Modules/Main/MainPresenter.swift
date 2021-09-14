@@ -45,6 +45,11 @@ final class MainPresenter {
 // MARK: - MainViewOutput
 
 extension MainPresenter: MainViewOutput {
+    func changeTextFieldFocused(_ isFocused: Bool) {
+        state.isTextFieldFocused = isFocused
+        update(animated: true)
+    }
+
     func retryButtonTriggered() {
         fetchPhotos()
     }
@@ -77,7 +82,7 @@ extension MainPresenter: MainViewOutput {
 extension MainPresenter: MainModuleInput {
 
     func update(force: Bool = false, animated: Bool) {
-        let viewModel = MainViewModel(state: state, listItemsFactory: listItemsFactory)
+        let viewModel = MainViewModel(state: state, listItemsFactory: listItemsFactory, output: self)
         view?.update(with: viewModel, force: force, animated: animated)
     }
 }
