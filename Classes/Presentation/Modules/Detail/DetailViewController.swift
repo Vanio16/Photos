@@ -34,11 +34,7 @@ final class DetailViewController: UIViewController {
         return label
     }()
 
-    private let photoImageView: UIImageView = {
-        let imageView = UIImageView()
-
-        return imageView
-    }()
+    private let photoImageView: UIImageView = .init()
 
     private let closeScreenButton: UIButton = {
         let button = UIButton()
@@ -77,15 +73,21 @@ final class DetailViewController: UIViewController {
                 .left(to: view.nui_safeArea.left, inset: Constants.closeScreenButtonInsetLeft)
                 .size(width: 20, height: 20)
         }
-        authorNameLabel.configureFrame { maker in
-            maker.centerY(to: closeScreenButton.nui_centerY)
-        }
+        layoutAuthorNameLabel()
     }
 
     private func layoutPhotoViewImage(ratio: CGFloat) {
         photoImageView.configureFrame { maker in
             maker.center()
                 .size(width: view.frame.width, height: view.frame.width / ratio)
+        }
+    }
+
+    private func layoutAuthorNameLabel() {
+        authorNameLabel.configureFrame { maker in
+            maker.centerX()
+                .sizeToFit()
+                .centerY(to: closeScreenButton.nui_centerY)
         }
     }
 
@@ -96,7 +98,7 @@ final class DetailViewController: UIViewController {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        isElementsHidden = !isElementsHidden
+        isElementsHidden.toggle()
         authorNameLabel.setHidden(isElementsHidden, animated: true)
         closeScreenButton.setHidden(isElementsHidden, animated: true)
     }
@@ -116,10 +118,7 @@ extension DetailViewController: DetailViewInput, ViewUpdate {
 
         updateViewModel(\.photo) { photo in
             authorNameLabel.text = photo.user.name
-            authorNameLabel.configureFrame { maker in
-                maker.centerX()
-                    .sizeToFit()
-            }
+            layoutAuthorNameLabel()
             let url = URL(string: photo.urls.regular)
             photoImageView.kf.setImage(with: url)
         }

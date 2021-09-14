@@ -23,7 +23,7 @@ final class DetailPresenter {
 
 extension DetailPresenter: DetailViewOutput {
     func closeScreenButtonTriggered() {
-        output?.detailModuleMainModuleShow(self)
+        output?.detailModuleClosed(self)
     }
 
     func viewDidLoad() {

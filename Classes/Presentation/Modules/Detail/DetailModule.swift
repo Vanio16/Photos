@@ -11,7 +11,6 @@ protocol DetailModuleInput: AnyObject {
 protocol DetailModuleOutput: AnyObject {
 
     func detailModuleClosed(_ moduleInput: DetailModuleInput)
-    func detailModuleMainModuleShow(_ moduleInput: DetailModuleInput)
 }
 
 final class DetailModule {

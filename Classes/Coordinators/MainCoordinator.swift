@@ -29,6 +29,7 @@ final class MainCoordinator: MainModuleOutput, DetailModuleOutput {
     }
 
     func detailModuleClosed(_ moduleInput: DetailModuleInput) {
+        navigationController.popViewController(animated: true)
     }
 
     func mainModuleDetailModuleShow(_ moduleInput: MainModuleInput, photo: PhotosModel, ratio: CGFloat) {
@@ -36,9 +37,5 @@ final class MainCoordinator: MainModuleOutput, DetailModuleOutput {
         self.detailModule = detailModule
         self.detailModule?.output = self
         navigationController.pushViewController(detailModule.viewController, animated: true)
-    }
-
-    func detailModuleMainModuleShow(_ moduleInput: DetailModuleInput) {
-        navigationController.popViewController(animated: true)
     }
 }

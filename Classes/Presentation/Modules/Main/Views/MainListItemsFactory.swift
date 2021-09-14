@@ -22,7 +22,7 @@ final class MainListItemsFactory {
                                                    ratio: CGFloat(ratio))
             item.itemDidSelectHandler = { [weak self] _ in
                 self?.output?.showDetailScreen(photo: photo, ratio: ratio)
-                        }
+            }
             cellItems.append(item)
         }
         let item = ActivityCollectionViewCellItem()
