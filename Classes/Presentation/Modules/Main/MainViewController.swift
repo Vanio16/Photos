@@ -14,6 +14,7 @@ protocol MainViewOutput: AnyObject {
     func viewDidLoad()
     func didScrollToPageEnd()
     func retryButtonTriggered()
+    func changeTextFieldFocused(_ isFocused: Bool)
     func showDetailScreen(photo: PhotosModel, ratio: CGFloat)
 }
 
@@ -56,6 +57,15 @@ final class MainViewController: UIViewController {
         return view
     }()
 
+    private lazy var searchView: SearchView = .init(viewModel: viewModel.searchViewModel)
+
+    private let offersView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.isHidden = true
+        return view
+    }()
+
     // MARK: - Lifecycle
 
     init(viewModel: MainViewModel, output: MainViewOutput) {
@@ -70,7 +80,7 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.add(collectionView, activityIndicator, networkErrorView)
+        view.add(searchView, activityIndicator, collectionView, offersView, networkErrorView)
         output.viewDidLoad()
     }
 
@@ -78,9 +88,27 @@ final class MainViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
-        collectionView.contentInset = view.safeAreaInsets
-        collectionView.scrollIndicatorInsets = collectionView.contentInset
+
+        searchView.configureFrame { maker in
+            maker.top(inset: 10 + view.safeAreaInsets.top)
+                .left()
+                .right()
+                .height(60)
+        }
+
+        offersView.configureFrame { maker in
+            maker.top(to: searchView.nui_bottom, inset: 10)
+                .left()
+                .right()
+                .bottom(inset: view.safeAreaInsets.bottom)
+        }
+
+        collectionView.configureFrame { maker in
+            maker.top(to: searchView.nui_bottom, inset: 10)
+                .left()
+                .right()
+                .bottom(inset: view.safeAreaInsets.bottom)
+        }
 
         activityIndicator.configureFrame { maker in
             maker.center()
@@ -111,6 +139,14 @@ extension MainViewController: MainViewInput, ViewUpdate {
 
         updateViewModel(\.isNetworkErrorViewHidden) { isHidden in
             networkErrorView.isHidden = isHidden
+        }
+
+        updateViewModel(\.isOffersViewHidden) { isHidden in
+            offersView.setHidden(isHidden, animated: true)
+        }
+
+        updateViewModel(\.searchViewModel) { searchViewModel in
+            searchView.update(with: searchViewModel, force: force, animated: animated)
         }
 
         collectionViewManager.update(with: viewModel.listSectionItems, animated: animated)
